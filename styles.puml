@@ -1,0 +1,126 @@
+@startuml
+!pragma layout smetana
+
+' Общие настройки
+hide unlinked
+autonumber 1 1 "00."
+
+' Определение цветов
+!define BODY_BG_COLOR #f0f0f0
+!define GROUP_BG Gold
+!define COLOR_ALT_FALSE_FG Pink
+!define COLOR_ALT_TRUE_FG TECHNOLOGY
+!define COLOR_PAR_FG LightSteelBlue
+!define COLOR_OPT_FG Beige
+!define COLOR_LOOP_FG PaleTurquoise
+!define COLOR_GROUP_FG LightSteelBlue
+!define COLOR_REF_BG LightSteelBlue
+
+' Настройки фона и поведения диаграммы
+skinparam backgroundColor BODY_BG_COLOR
+skinparam Shadowing false
+skinparam maxMessageSize 150
+skinparam sequenceMessageAlignment left
+skinparam responseMessageBelowArrow false
+
+skinparam sequence {
+    ReferenceHeaderBackgroundColor GROUP_BG
+    ReferenceBackgroundColor COLOR_REF_BG
+    LifeLinebackgroundColor Plum
+    LifeLineBorderColor Black
+    ActivationBackgroundColor LightYellow
+    ActivationBorderColor Black
+    ParticipantPadding 50
+}
+
+'Настройки участников
+
+skinparam actor {
+    Padding 30
+    BorderThickness 1.5
+    FontSize 12
+    FontStyle bold
+    BackgroundColor MistyRose
+    BorderColor Firebrick
+}
+
+skinparam database {
+    Padding 30
+    BorderThickness 1.5
+    FontSize 12
+    FontStyle bold
+    BackgroundColor MistyRose
+    BorderColor Firebrick
+}
+
+skinparam queue {
+    Padding 30
+    BorderThickness 1.5
+    FontSize 12
+    FontStyle bold
+    BackgroundColor MistyRose
+    BorderColor Firebrick
+}
+
+skinparam participant {
+    Padding 30
+    BorderThickness 1.5
+    FontSize 12
+    FontStyle bold
+    BackgroundColor MistyRose
+    BorderColor Firebrick
+}
+
+' Настройки заметок
+skinparam note {
+    BackgroundColor BranchedAlmond
+    BorderColor SandyBrown
+}
+
+' Настройки заголовка
+skinparam title {
+    BorderRoundCorner 10
+    BorderThickness 1.5
+    BorderColor Firebrick
+    BackgroundColor MistyRose
+    FontSize 20
+}
+
+skinparam Group {
+    BackgroundColor COLOR_GROUP_FG
+    BorderColor Black
+    HeaderBackgroundColor GROUP_BG
+}
+
+' Настройка стилей
+<style>
+sequenceDiagram {
+  group {
+    FontStyle regular
+    LineThickness 3
+    LineColor black
+    LineStyle solid
+  }
+  groupHeader {
+    FontStyle regular
+    FontColor black
+    BackGroundColor GROUP_BG
+    LineColor black
+    LineStyle solid
+  }
+}
+alt {
+  BackgroundColor #FFD700
+  BorderColor #FFC0CB
+}
+opt {
+  BackgroundColor #FFD700
+  BorderColor #F5F5DC
+}
+loop {
+  BackgroundColor #FFD700
+  BorderColor #AFEEEE
+}
+</style>
+@enduml
+

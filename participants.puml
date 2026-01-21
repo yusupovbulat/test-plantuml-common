@@ -1,0 +1,37 @@
+@startuml
+!pragma teoz true
+
+actor Client as Client order 10
+
+box "MIB" #HoneyDew
+
+        box "Mobile" #Linen
+            participant "Mobile" as Mobile order 20
+        end box
+
+    participant "Transfer\nService" as Transfer order 30
+    participant "Profile\nService" as Profile order 31
+    participant "Auth Service" as Auth order 32
+    participant "Important\nNotice" as IS order 33
+    participant "Notification" as Notification order 34
+    participant "Limit" as Limit order 37
+    queue "Kafka" as Kafka order 38
+    participant "History" as History order 39
+    participant "Integration\nService" as Integration order 40
+    participant "Directory\nService" as Directory order 41
+
+end box
+
+box "Bank" #MintCream
+
+    participant "Processing" as Processing order 81
+    participant "OnlineBank.WebAPI" as WebAPI order 82
+    database "OnlineBank DB" as OBDB order 83
+    participant "Processing Gate" as Pgate order 84
+    participant "OnlineBank.IntegrationService" as OBIS order 85
+    participant "Bank Bus" as BankBus order 87
+    participant "BakaiAPI" as BakaiAPI order 90
+    participant "Proposal" as Proposal order 91
+
+end box
+@enduml
